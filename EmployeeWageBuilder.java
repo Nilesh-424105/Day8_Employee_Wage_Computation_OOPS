@@ -1,6 +1,10 @@
 package com.empwage;
 
-public class EmployeeWageBuilder {
+/*
+ * Ability to manage Employee Wage of multiple companies Using Interface Approach
+ */
+
+public class EmployeeWageBuilder implements ComputeWage {
 
 	// constants
 	private static final int IS_PART_TIME = 1;
@@ -12,18 +16,18 @@ public class EmployeeWageBuilder {
 	int numOfCompany = 0;
 
 	// constructor
-	private EmployeeWageBuilder() {
+	public EmployeeWageBuilder() {
 		// Assigning Value In Array
 		companyWage = new CompanyEmpWage[5];
 	}
 
 	// Instance Method user for Add Company
-	private void addCompany(String company, int empRate, int numOfDays) {
+	public void addCompany1(String company, int empRate, int numOfDays) {
 		companyWage[numOfCompany++] = new CompanyEmpWage(company, empRate, numOfDays);
 	}
 
 	// Instance Method used to calculate Employee Wage
-	private void calculateEmpWage() {
+	public void calculateEmpWage() {
 		for (int index = 0; index < companyWage.length; index++) {
 			calculateEmpWageForCompany(companyWage[index]);
 		}
@@ -31,7 +35,7 @@ public class EmployeeWageBuilder {
 	}
 
 	// Instance Method used to calculate Employee Wage For Each Company
-	private int calculateEmpWageForCompany(CompanyEmpWage companyEmpWage) {
+	public int calculateEmpWageForCompany(CompanyEmpWage companyEmpWage) {
 
 		int empHrs = 0, totalEmpWage = 0, empWage = 0;
 		// computation
@@ -62,10 +66,22 @@ public class EmployeeWageBuilder {
 		// Object Creation
 		EmployeeWageBuilder empWageBuilder = new EmployeeWageBuilder();
 		// Calling Method For Add Company By Using Object
-		empWageBuilder.addCompany("Dmart", 20, 2);
-		empWageBuilder.addCompany("Reliance", 30, 3);
-		empWageBuilder.addCompany("Flipkart", 25, 4);
+		empWageBuilder.addCompany1("Dmart", 20, 2);
+		empWageBuilder.addCompany1("Reliance", 30, 3);
+		empWageBuilder.addCompany1("Flipkart", 25, 4);
 		empWageBuilder.calculateEmpWage();
+	}
+
+	@Override
+	public void addCompany(String company, int empRate, int numOfDays) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void computeEmpWage() {
+		// TODO Auto-generated method stub
+
 	}
 
 }

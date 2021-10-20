@@ -1,9 +1,5 @@
 package com.empwage;
 
-/*
- * Ability to manage Employee Wage of multiple companies
- */
-
 public class CompanyEmpWage {
 
 	// Instance Variables

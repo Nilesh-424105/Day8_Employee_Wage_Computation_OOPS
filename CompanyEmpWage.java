@@ -10,6 +10,7 @@ public class CompanyEmpWage {
 	int numOfDays;
 
 	// constructor
+
 	public CompanyEmpWage(String company, int empRate, int numOfDays) {
 		super();
 		this.company = company;

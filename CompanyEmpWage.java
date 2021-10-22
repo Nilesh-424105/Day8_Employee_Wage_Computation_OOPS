@@ -9,7 +9,7 @@ public class CompanyEmpWage {
 	// Number of Working Days
 	int numOfDays;
 
-	// constructor
+	// Constructor
 
 	public CompanyEmpWage(String company, int empRate, int numOfDays) {
 		super();
